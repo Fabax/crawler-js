@@ -1,4 +1,4 @@
-// Before you start make sure you selected a type : movie ou serie, a gender : such as action and the amount of pages you want to parse
+// Before you start make sure you selected a type : movie ou serie, a gender : such as action and the amount of pages you want to parse.
 var type = "movie";
 var genre = "action"; // genres disponibles : animation,comedy,adventure,biography,crime,drama,western,thriller,sci_fi,mystery,music,war,sport,romance,musical,family
 var nbPages = 2;

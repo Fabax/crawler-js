@@ -1,17 +1,19 @@
+// Before you start make sure you selected a type : movie ou serie, a gender : such as action and the amount of pages you want to parse
 var type = "movie";
 var genre = "action"; // genres disponibles : animation,comedy,adventure,biography,crime,drama,western,thriller,sci_fi,mystery,music,war,sport,romance,musical,family
+var nbPages = 2;
 
 var links = [];
 var quotes = [];
 var PagesLinks =[];
-var nbPages = 2;
 var repeatOperation = 0;
 var movieUrl = "http://www.imdb.com/search/title?genres="+genre+"&title_type=feature&sort=moviemeter,asc"; 
 var serieUrl = "http://www.imdb.com/search/title?num_votes=5000,&sort=user_rating,desc&title_type=tv_series";
-var startingUrl;
-
 var fs = require('fs');
 var utils = require('utils');
+
+// selected your starting url 
+var startingUrl = serieUrl;
  
 var casper = require('casper').create({
   clientScripts: ["jquery.js"],
@@ -50,13 +52,7 @@ function getLinks() {
 //Crawl------------------------
  
 //va sur la page des series imd
-casper.start(){
-  if(type == "movie"){
-    startingUrl = movieUrl;
-  }else if(type =="serie"){
-    startingUrl = serieUrl;
-  }
-};
+casper.start();
 
 casper.open(startingUrl, headers).then(function(response) {
     var i = 0;
